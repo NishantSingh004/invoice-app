@@ -1,0 +1,200 @@
+<article>
+  <div class="subnav">
+    <h4>Get Started with your business</h4>
+  </div>
+  <div class="main-container">
+    <div class="container">
+      <div class="sub-container">
+        <h5>Business Details</h5>
+        <form [formGroup]="form">
+          <div class="business-name">
+            <label for="business-name"
+              >1.Your Name/Business Name <span>*</span></label
+            >
+            <small
+              >Official Name used across Accounting documents and reports</small
+            >
+            <input
+              type="text"
+              id="business-name"
+              placeholder="If you're a freelancer, add your personal name"
+              formControlName="business"
+            />
+          </div>
+          <small
+            *ngIf="
+              form.controls['business'].hasError('required') &&
+              form.controls['business'].touched
+            "
+            class="error"
+          >
+            Business name is required
+          </small>
+          <div class="business-type">
+            <label for="checkbox"
+              >2.What describes you best?<span>*</span></label
+            >
+            <div class="checkbox-container">
+              <label>
+                <input
+                  id="checkbox"
+                  type="checkbox"
+                  [checked]="checkbox1"
+                  (change)="onCheckboxChange('checkbox1', $event)"
+                />
+                <i class="bi bi-person-circle"></i>Individual/Freelancer
+              </label>
+              <label>
+                <input
+                  type="checkbox"
+                  id="checkbox"
+                  [checked]="checkbox2"
+                  (change)="onCheckboxChange('checkbox2', $event)"
+                />
+                <i class="bi bi-people"></i>Team/Agency/Company
+              </label>
+            </div>
+          </div>
+          @if(checkbox1){
+          <div class="about">
+            <label for="business-date">3.In Business Since<span>*</span></label>
+            <small>
+              Growing entrepreneur or an established business? Let people know!
+            </small>
+            <input
+              type="month"
+              id="business-date"
+              formControlName="businessSince"
+            />
+          </div>
+          <div class="website">
+            <label for="website">4.Website</label>
+            <small>
+              Add your business or work website. Helps potential clients find
+              you faster
+            </small>
+            <input type="text" id="website" placeholder="Your Work Website" />
+          </div>
+          <div class="phone-number-wrapper">
+            <label for="phone">5.Phone Number<span>*</span></label>
+            <div class="phone-input">
+              <!-- <select id="country-code">
+                @for(country of countryCodes; track country){
+                <option [value]="country.code">
+                  {{ country.code }} - {{ country.name }}
+                </option>
+                }
+              </select> -->
+
+              <input
+                type="tel"
+                id="phone"
+                placeholder="Enter Your Phone Number"
+                formControlName="phoneNumber"
+              />
+            </div>
+          </div>
+          <div class="country-currency">
+            <div class="country">
+              <label for="country">6.Country<span>*</span></label>
+              <div class="select-country">
+                <select name="" id="country" formControlName="country">
+                  <option value="" disabled>Select your Country</option>
+                  @for(country of countries; track country){
+                  <option value="">{{ country }}</option>
+                  }
+                </select>
+              </div>
+            </div>
+            <div class="currency">
+              <label for="currency">7.Currency<span>*</span></label>
+              <div class="select-currency">
+                <select id="currency" formControlName="currency">
+                  <option value="" disabled>select your currency</option>
+                  @for(currencies of currency; track currencies){
+                  <option value="">{{ currencies }}</option>
+                  }
+                </select>
+              </div>
+            </div>
+          </div>
+          }@else if(checkbox2){
+          <div class="size">
+            <div class="team-size">
+              <label for="team-size">3.Team Size</label>
+            </div>
+
+            <input
+              type="text"
+              id="team-size"
+              placeholder="Number of people working in your company"
+            />
+          </div>
+          <div class="about">
+            <label for="business-date">4.In Business Since<span>*</span></label>
+            <small>
+              Growing entrepreneur or an established business? Let people know!
+            </small>
+            <input type="month" id="business-date" />
+          </div>
+          <div class="website">
+            <label for="website">5.Website</label>
+            <small>
+              Add your business or work website. Helps potential clients find
+              you faster
+            </small>
+            <input type="text" id="website" placeholder="Your Work Website" />
+          </div>
+          <div class="phone-number-wrapper">
+            <label for="phone">6.Phone Number<span>*</span></label>
+            <div class="phone-input">
+              <!-- <select id="country-code">
+                @for(country of countryCodes; track country){
+                <option [value]="country.code">
+                  {{ country.code }} - {{ country.name }}
+                </option>
+                }
+              </select> -->
+
+              <input
+                type="tel"
+                id="phone"
+                placeholder="Enter Your Phone Number"
+                formControlName="phoneNumber"
+              />
+            </div>
+          </div>
+          <div class="country-currency">
+            <div class="country">
+              <label for="country">7.Country<span>*</span></label>
+              <div class="select-country">
+                <select id="country" formControlName="country">
+                  <option value="" disabled>Select your Country</option>
+                  @for(country of countries; track country){
+                  <option value="">{{ country }}</option>
+                  }
+                </select>
+              </div>
+            </div>
+            <div class="currency">
+              <label for="currency">8.Currency<span>*</span></label>
+              <div class="select-currency">
+                <select id="currency" formControlName="currency">
+                  <option value="" disabled>select your currency</option>
+                  @for(currencies of currency; track currencies){
+                  <option value="">{{ currencies }}</option>
+                  }
+                </select>
+              </div>
+            </div>
+          </div>
+          }
+
+          <button (click)="sendData()" [disabled]="!(checkbox1 || checkbox2)">
+            Save and Continue
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</article>

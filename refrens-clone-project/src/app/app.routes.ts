@@ -1,0 +1,73 @@
+import { Routes } from '@angular/router';
+import { RegisterComponent } from './register/register.component';
+import { AfterRegistrationComponent } from './after-registration/after-registration.component';
+import { BusinessFormComponent } from './business-form/business-form.component';
+import { InvoiceFormComponent } from './invoice-form/invoice-form.component';
+import { InvoiceAppComponent } from './invoice-app/invoice-app.component';
+import { QuotationFormComponent } from './quotation-form/quotation-form.component';
+import { QuotationComponent } from './side-bar/quotation/quotation.component';
+import { InvoiceComponent } from './side-bar/invoice/invoice.component';
+import { ReportComponent } from './user-menu/report/report.component';
+import { ReportBugComponent } from './user-menu/report/report-bug/report-bug.component';
+import { ReportFeatureComponent } from './user-menu/report/report-feature/report-feature.component';
+
+export const routes: Routes = [
+  {
+    path: 'register',
+    component: RegisterComponent,
+    data: { fullscreen: true },
+  },
+  {
+    path: 'app',
+    component: InvoiceAppComponent,
+    data: { fullscreen: true },
+    children: [
+      {
+        path: '',
+        component: AfterRegistrationComponent,
+      },
+      {
+        path: 'invoice-form',
+        component: InvoiceFormComponent,
+      },
+      {
+        path: 'quotation-form',
+        component: QuotationFormComponent,
+      },
+      {
+        path: 'quotation',
+        component: QuotationComponent,
+      },
+      {
+        path: 'invoice',
+        component: InvoiceComponent,
+      },
+    ],
+  },
+
+  {
+    path: 'businesses',
+    component: BusinessFormComponent,
+    data: { fullscreen: true },
+  },
+  {
+    path: 'report',
+    component: ReportComponent,
+    data: { fullscreen: true },
+    children: [
+      {
+        path: '',
+        redirectTo: 'features', // Default route redirects to 'features'
+        pathMatch: 'full',
+      },
+      {
+        path: 'features',
+        component: ReportFeatureComponent,
+      },
+      {
+        path: 'bugs',
+        component: ReportBugComponent,
+      },
+    ],
+  },
+];

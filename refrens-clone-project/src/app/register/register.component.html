@@ -1,0 +1,62 @@
+<article>
+  <div class="main-container">
+    <div class="heading">
+      <h1>Tools you need to run your business.</h1>
+      <p>Accounting. Inventory. Leads and more.</p>
+    </div>
+    <div class="container">
+      <div class="forms">
+        <form [formGroup]="form">
+          <h2>Sign Up On Invoice Genrator</h2>
+          <div>
+            <label for="name">Country</label>
+            <select id="Country" formControlName="country">
+              <!-- <option value="" disabled>Select your Country</option> -->
+              @for(country of countries; track country){
+              <option value="">{{ country }}</option>
+              }
+            </select>
+          </div>
+          <div>
+            <label for="name">Your Name</label>
+            <input type="text" formControlName="name" />
+          </div>
+          <div>
+            <label for="email">Your Email</label>
+            <input type="email" formControlName="email" />
+          </div>
+          <div>
+            <label for="phone">Phone</label>
+            <input type="text" formControlName="phoneNumber" />
+          </div>
+          <!-- <div>
+            <label for="phone">Set Password</label>
+            <input type="password" formControlName="password" />
+          </div>
+          @if(invalidPassword){
+          <small class="error"
+            >Please enter valid password(atleast 6 character long)</small
+          >
+          } -->
+          <div>
+            <input (change)="onCheckBox($event)" type="checkbox" />
+
+            <span
+              >I agree to the Refrens <a href="">Terms of Service</a> and
+              <a href="">Privacy Policy</a></span
+            >
+          </div>
+          <div class="button">
+            <button
+              (click)="navigateOnce()"
+              [disabled]="!checkBox || form.invalid"
+              type="submit"
+            >
+              Create Account
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</article>
