@@ -6,13 +6,13 @@
 
 .container{
   background: #f9efe6;
-width: 40vw;
-/* height: 300px; */
+width: 50vw;
+/* height: 270px; */
 border-radius: 10px;
 padding: 2rem;
   border: 1px solid #ccc;
   margin-left:400px;
-  margin-top: 100px;
+  margin-top: 5px;
 }
 
 .heading{

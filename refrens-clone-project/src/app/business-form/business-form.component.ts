@@ -27,21 +27,15 @@ export class BusinessFormComponent {
     business: new FormControl('', {
       validators: [Validators.required],
     }),
-    checkbox: new FormControl('', {
-      validators: [Validators.required],
-    }),
+   
     phoneNumber: new FormControl('', {
       validators: [Validators.required],
     }),
     businessSince: new FormControl('', {
       validators: [Validators.required],
     }),
-    country: new FormControl('', {
-      validators: [Validators.required],
-    }),
-    currency: new FormControl('', {
-      validators: [Validators.required],
-    }),
+    country: new FormControl(''),
+    currency: new FormControl(''),
   });
 
   countryCodes: { code: string; name: string }[] = [

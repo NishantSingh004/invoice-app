@@ -5,10 +5,18 @@
 }
 
 .container{
-background: #FFFAFA;
-width: 40vw;
+  background: #f9efe6;
+width: 50vw;
+/* height:auto; */
+  border: 1px solid #ccc;
+
 border-radius: 10px;
+margin-left:350px;
 padding: 2rem;
+}
+.comb{
+  display: flex;
+  justify-content: space-between;
 }
 
 .heading{
@@ -41,6 +49,7 @@ p{
   padding: 0.5rem;
   border-radius: 5px;
   outline: none;
+  cursor: pointer;
 }
 label{
   margin-bottom: 1rem;
@@ -59,10 +68,14 @@ button{
 button:hover{
   background-color: #6C7C59;
 }
+.Business-Name input{
+  width: 60%;
+}
 
 @media screen and (min-width: 128px) and (max-width: 900px) {
   .container{
     width: 100%;
+    margin-left: 0;
   }
   form{
     width: 100%;
@@ -79,4 +92,10 @@ button:hover{
   .heading{
     font-size: 1rem;
   }
+  .comb{
+    display: block;
+  }
+  .Business-Name input{
+  width: 100%;
+}
 }

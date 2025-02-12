@@ -1,21 +1,22 @@
 article{
   background: #f9efe6;
-  height: 100vh;
+  height: 120vh;
   width: 250px;
   position: static;
   z-index: 100;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-
+top: 0;
 }
 .container{
   padding: 20px;
 }
 .businessName{
   padding: 5px;
+  margin-left: 1rem;
   display: flex;
   align-items: center;
   justify-content: start;
-  
+   
 }
 .businessName h5{
   font-size: 1rem;
@@ -24,7 +25,7 @@ article{
 
 .sub-container{
 padding: 10px;
-margin-top: 20px;
+margin-top: 10px;
 }
 i{
   margin-right:20px ;
@@ -70,5 +71,8 @@ a:hover{
   }
   .container{
     height: 100%;
+  }
+  .businessName{
+    margin-top: 3rem;
   }
 }

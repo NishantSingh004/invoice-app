@@ -27,10 +27,24 @@
 ,
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
               "node_modules/bootstrap-icons/font/bootstrap-icons.min.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": ["node_modules/jspdf/dist/jspdf.umd.min.js",
+  "node_modules/jspdf-autotable/dist/jspdf.plugin.autotable.js",
+  "node_modules/html2canvas/dist/html2canvas.min.js"],
+            "allowedCommonJsDependencies": [
+              "jspdf",
+              "jspdf-autotable",
+              "html2canvas",
+              "dompurify",
+              "canvg",
+              "core-js",
+              "raf",
+              "rgbcolor"
+]
+
           },
           "configurations": {
             "production": {
@@ -42,8 +56,8 @@
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "6kb"
+                  "maximumWarning": "10kb",
+                  "maximumError": "10kb"
                 }
               ],
               "outputHashing": "all"

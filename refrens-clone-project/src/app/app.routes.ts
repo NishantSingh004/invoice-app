@@ -10,6 +10,9 @@ import { InvoiceComponent } from './side-bar/invoice/invoice.component';
 import { ReportComponent } from './user-menu/report/report.component';
 import { ReportBugComponent } from './user-menu/report/report-bug/report-bug.component';
 import { ReportFeatureComponent } from './user-menu/report/report-feature/report-feature.component';
+import { PricingComponent } from './pricing/pricing.component';
+import { ContactFormComponent } from './contact-form/contact-form.component';
+import { BlogComponent } from './blog/blog.component';
 
 export const routes: Routes = [
   {
@@ -70,4 +73,19 @@ export const routes: Routes = [
       },
     ],
   },
+  {
+    path:'pricing',
+    component:PricingComponent,
+    data: { fullscreen: true }
+  },
+  {
+    path:'contact',
+    component:ContactFormComponent,
+    data: { fullscreen: true }
+  },
+  {
+    path:'blog',
+    component:BlogComponent,
+    data: { fullscreen: true }
+  }
 ];

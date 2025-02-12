@@ -10,11 +10,13 @@ import {
   Validators,
   ReactiveFormsModule,
 } from '@angular/forms';
+import { NgIf } from '@angular/common';
+import { ScrollAnimationDirective } from '../directives/scroll-animation.directive';
 
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [FormsModule, ReactiveFormsModule],
+  imports: [FormsModule, ReactiveFormsModule, NgIf, ScrollAnimationDirective],
   templateUrl: './register.component.html',
   styleUrl: './register.component.css',
 })
@@ -37,13 +39,17 @@ export class RegisterComponent {
     // }),
   });
 
-  // get invalidPassword() {
-  //   return (
-  //     this.form.controls.password.invalid &&
-  //     this.form.controls.password.touched &&
-  //     this.form.controls.password.dirty
-  //   );
-  // }
+  get invalidName() {
+    return this.form.controls.name.invalid && this.form.controls.name.touched;
+  }
+
+  get invalidEmail() {
+    return this.form.controls.email.invalid && this.form.controls.email.touched;
+  }
+
+  get invalidPhone() {
+    return this.form.controls.phoneNumber.invalid && this.form.controls.phoneNumber.touched;
+  }
 
   countries: string[] = [
     'India',

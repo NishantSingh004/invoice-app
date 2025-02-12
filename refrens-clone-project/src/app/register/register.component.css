@@ -4,6 +4,18 @@ article {
   min-height:100vh;
   padding: 40px;
 }
+
+.fade-in-start {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1s ease-out;
+}
+
+/* Animation class (added dynamically) */
+.fade-in {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
 .main-container{
   padding: 20px;
   display: flex;
@@ -27,7 +39,7 @@ article {
 }
 
 .container {
-  max-width: 400px;
+width: 400px;
   background: #ebfffc;
   padding: 20px;
   border-radius: 8px;
@@ -76,13 +88,14 @@ article {
   color: #666;
 }
 
-.terms a {
-  color: #007bff;
+a {
+  color: #ef7a54;
   text-decoration: none;
 }
 
-.terms a:hover {
-  text-decoration: underline;
+.error{
+  font-size: 0.7rem;
+  padding: 5px;
 }
 
 button {
@@ -105,6 +118,9 @@ button:hover {
   background: white;
   color: #ef7a54;}
 
+  small{
+    font-size: 0.8rem;
+  }
 @media screen and (min-width: 128px) and (max-width: 930px) {
   article{
     height: auto;

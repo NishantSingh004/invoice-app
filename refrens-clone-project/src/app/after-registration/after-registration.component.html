@@ -1,8 +1,8 @@
 <article>
   <div class="container">
-    <div class="second-ontainer">
-      <div class="detail">
-        <p>
+    <div class="second-ontainer fade-in-start" appScrollAnimation>
+      <div class="detail fade-in-start" appScrollAnimation>
+        <p >
           Hello <span>{{ namereceived }}</span>
         </p>
         <p>
@@ -16,8 +16,7 @@
           <div class="subBox">
             <h5>Invoice</h5>
             <small>
-              Effortlessly create and share professional invoices to clients via
-              Email and WhatsApp.
+              Effortlessly create and share professional invoices via Email and WhatsApp.
             </small>
             <img src="assets/image/invoice3.webp" alt="invoice" />
             <a (click)="invoice()" routerLink="invoice-form"

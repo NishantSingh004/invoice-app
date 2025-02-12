@@ -1,11 +1,12 @@
 import { Component, inject, Input, OnInit, output } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { DataSharingServiceService } from '../data-sharing-service.service';
+import { ScrollAnimationDirective } from '../directives/scroll-animation.directive';
 
 @Component({
   selector: 'app-after-registration',
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink, ScrollAnimationDirective],
   templateUrl: './after-registration.component.html',
   styleUrl: './after-registration.component.css',
 })
